@@ -15,12 +15,12 @@ class PostsController < ApplicationController
 	def index
 
 		# @post = Post.all
-		 @post = Post.select(Arel.star).where(Post.arel_table[:user_id].eq(current_user.id))
-		if Post.select(:post_id).where(Post.arel_table[:user_id].eq(2))
+		 @post = Post.all
+		# if Post.select(:post_id).where(Post.arel_table[:user_id].eq(2))
 
-		else 
-			render 'nothing'
-		end	 
+		# else 
+		# 	render 'nothing'
+		# end	 
 	end
 	def show
 		@post = Post.find(params[:id])

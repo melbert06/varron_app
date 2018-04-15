@@ -5,7 +5,7 @@ class MessagesController < ApplicationController
 	def index
 
 		# @post = Post.all
-		 @post = Post.select(Arel.star).where(Post.arel_table[:title].eq('melbert'))
+		 @post = Post.select(Arel.star).where(Post.arel_table[:title].eq(current_user.first_name))
 		if Post.select(:post_id).where(Post.arel_table[:user_id].eq(2))
 
 		else 
